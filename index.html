@@ -1,151 +1,235 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[crimsy]* Affordable Technology Solutions</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-* {
-  box-sizing: border-box;
-}
-.menu {
-  float: left;
-  width: 20%;
-}
-.menuitem {
-  padding: 8px;
-  margin-top: 7px;
-  border-bottom: 1px solid #f1f1f1;
-}
-.main {
-  float: left;
-  width: 90%;
-  padding: 0 20px;
-  overflow: hidden;
-  color:#fff; line-height:1.4em; 
-  font-family:Arial, Helvetica, sans-serif;
-  font-size:150%;
-  background:#151515;
-}
-.right {
-  background-color: lightblue;
-  float: left;
-  width: 20%;
-  padding: 10px 15px;
-  margin-top: 7px;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-#heading
-{
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #e9ecef;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
 
-    color: #CCC;
-    border-bottom:10px solid #474747;
-    width: 90%;
-}
+        .logo-container {
+            text-align: left;
+            margin-bottom: 25px;
+            width: 100%;
+            max-width: 760px;
+        }
 
+        .logo-container img {
+            max-width: 380px;
+            height: auto;
+            display: inline-block;
+        }
 
+        .business-card {
+            background: #151515;
+            color: #ffffff;
+            width: 100%;
+            max-width: 760px;
+            border-radius: 14px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+            padding: 35px;
+            overflow: hidden;
+            border-bottom: 4px solid #007EFB;
+        }
 
-h1, h2, h3, h4, h5, h6
-{
-	font-family:Georgia, "Times New Roman", Times, serif;
-	
-}
+        .card-header {
+            margin-bottom: 25px;
+            border-bottom: 2px solid #2a2a2a;
+            padding-bottom: 15px;
+        }
 
-#footer
-{
-	padding-top:20px;
-	margin-bottom:40px;
-    border-top:10px solid #0080FF;
-	text-align: right;
-	color: #CCC;
-    width: 90%;
-}
+        h1 {
+            font-family: Georgia, "Times New Roman", Times, serif;
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
 
-#footer p
-{
-	font-size:0.9em;
-}
+        h2 {
+            font-family: Georgia, "Times New Roman", Times, serif;
+            font-size: 1.25rem;
+            color: #cccccc;
+            font-weight: normal;
+        }
 
-.foot_cap_bl {
-	font-size: 12px;
-	color: #007EFB;
-	font-style: italic;
-	text-transform: none;
-	text-align: right;
-}
+        .card-body {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 30px;
+        }
 
+        .promo-image {
+            flex: 0 0 42%;
+        }
 
-@media only screen and (max-width:800px) {
-  /* For tablets: */
-  .main {
-    width: 98%;
-    padding: 5;
+        .promo-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
 
-  }
-  .right {
-    width: 100%;
-  }
-}
-@media only screen and (max-width:500px) {
-  /* For mobile phones: */
-  .menu, .main, .right {
-    width: 100%;
+        .services-container {
+            flex: 1;
+        }
 
-  }
-}
-</style>
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px 20px;
+            list-style: none;
+        }
+
+        .services-list li {
+            position: relative;
+            padding-left: 18px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            color: #dddddd;
+        }
+
+        .services-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #0080FF;
+            font-weight: bold;
+        }
+
+        .card-footer {
+            border-top: 2px solid #2a2a2a;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            font-size: 1.05rem;
+            color: #ffffff;
+        }
+
+        .contact-img {
+            height: 22px;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .service-area {
+            font-size: 0.9rem;
+            color: #aaaaaa;
+            line-height: 1.5;
+        }
+
+        .site-footer {
+            margin-top: 25px;
+            width: 100%;
+            max-width: 760px;
+            text-align: right;
+            color: #777777;
+            font-size: 0.85rem;
+        }
+
+        .site-footer strong {
+            color: #555555;
+        }
+
+        .foot_cap_bl {
+            font-style: italic;
+        }
+
+        @media only screen and (max-width: 720px) {
+            body {
+                padding: 20px 15px;
+            }
+            
+            .card-body {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .promo-image {
+                width: 60%;
+            }
+
+            .services-list {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .site-footer {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    
-<script>
-document.addEventListener('DOMContentLoaded', function() {
- var currentYear = new Date().getFullYear();
- document.getElementById('currentYear').textContent = currentYear;
-});
-</script>
+    <div class="logo-container">
+        <img src="images/logo.png" alt="crimsy.com logo">
+    </div>
 
-<div style="overflow:auto">
+    <div class="business-card">
+        <header class="card-header">
+            <h1>Ismael Ceballos</h1>
+            <h2>Affordable Technology Solutions</h2>
+        </header>
 
-<div style="padding:15px;">
-  <img src="images/logo.png" alt="crimsy.com logo">
-  <h1>Ismael Ceballos</h1>
-</div>
-<!--  <div class="menu">
-    <div class="menuitem">1</div>
-    <div class="menuitem">2</div>
-    <div class="menuitem">3</div>
-    <div class="menuitem">4</div>
-  </div>
--->
-<div id="heading"></div>
-  <div class="main">
-  <h2>Affordable Technology Solutions</h2>
-       <img src="images/promo02.jpg" alt="Image of a Computer CPU Processor" style="width:40%">
-        <p>
-        
-<ul><!--<li><span class="firstletter">C</span>omputer Maintenance &amp; Repair</li>-->
-	<li>Network Administration</li>
-	<li>Web Design</li>
-	<li>Network Designs and Installs</li>
-	<li>Wireless/WiFi Installs</li>
-	<li>Security Camera Installs</li>
-	<li>Computer Maintenance &amp; Repair</li>
-	<li>General Assistance &amp; Troubleshooting</li>
-</ul>
+        <div class="card-body">
+            <div class="promo-image">
+                <img src="images/promo02.jpg" alt="Image of a Computer CPU Processor">
+            </div>
 
-Contact me at:  &nbsp; <img src="images/fakelogo.png" height=29px alt="815-410-4740">
-<p> Servicing the Ilinois Valley area and surrounding.  Over 15 years of experience.</p>
-<br><br>
-  </div>
+            <div class="services-container">
+                <ul class="services-list">
+                    <li>Network Administration</li>
+                    <li>Web Design</li>
+                    <li>Network Designs and Installs</li>
+                    <li>Wireless/WiFi Installs</li>
+                    <li>Security Camera Installs</li>
+                    <li>Computer Maintenance &amp; Repair</li>
+                    <li>General Assistance &amp; Troubleshooting</li>
+                </ul>
+            </div>
+        </div>
 
- <!-- <div class="right">
-   
-  </div>-->
-</div>
-<div id="footer">
-<p><strong>[crimsy]* </strong><span class="foot_cap_bl">2005 - <span id="currentYear"></span></span></p>
+        <footer class="card-footer">
+            <div class="contact-row">
+                Contact me at: <img src="images/fakelogo.png" class="contact-img">
+            </div>
+            <p class="service-area">Servicing the Illinois Valley area and surrounding. Over 15 years of experience.</p>
+        </footer>
+    </div>
 
+    <footer class="site-footer">
+        <p><strong>[crimsy]* </strong><span class="foot_cap_bl">2005 - <span id="currentYear"></span></span></p>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var currentYear = new Date().getFullYear();
+        document.getElementById('currentYear').textContent = currentYear;
+    });
+    </script>
 
 </body>
 </html>
-
